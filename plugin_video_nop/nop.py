@@ -17,7 +17,7 @@ _handle = int(sys.argv[1])
 CATEGORYS = ["最近得分","收藏最多","最近加精","本月最热","上月最热"]
 
 # 初始化NOP服务器地址
-core = NOP_Core("nop.skyworth.wang")
+core = NOP_Core("======服务器地址保密=======")
 
 
 # 列出视频类别
