@@ -6,7 +6,7 @@
 # Created on: 2016.1.5
 
 import sys
-from nopcore import  NOP_Core
+from nopcore import NOPCore
 import xbmcplugin
 import xbmcgui
 from urlparse import parse_qsl
@@ -17,7 +17,7 @@ _handle = int(sys.argv[1])
 CATEGORYS = ["最近得分","收藏最多","最近加精","本月最热","上月最热"]
 
 # 初始化NOP服务器地址
-core = NOP_Core("======服务器地址保密=======")
+core = NOPCore("======服务器地址保密=======")
 
 
 # 列出视频类别
@@ -66,8 +66,8 @@ def router(paramstring):
         elif params['action'] == 'play':
             #TODO
             pass
-        else:
-            list_category(CATEGORYS)
+    else:
+        list_category(CATEGORYS)
 
 # 程序主入口
 if __name__ == '__main__':
