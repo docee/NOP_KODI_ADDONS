@@ -59,7 +59,27 @@ def router(paramstring):
 
         if params['action'] == 'list':
             #TODO
-            pass
+            category = int(params['category'])
+
+            result = core.requestVideoList(category,1)
+            videos = result['videos']
+
+            lists = []
+
+            for i in range(0,len(videos)):
+                title = videos[i]['title']
+                list_item = xbmcgui.ListItem(label=title)
+
+                url = '{0}?action=viewkey&viewkey={1}'.format(_url,videos[i]['viewkey'])
+
+                lists.append((url,list_item,True))
+
+            xbmcplugin.addDirectoryItems(_handle, lists, len(lists))
+            xbmcplugin.addSortMethod(_handle, xbmcplugin.SORT_METHOD_LABEL_IGNORE_THE)
+            xbmcplugin.endOfDirectory(_handle)
+
+
+
         elif params['action'] == 'viewkey':
             #TODO
             pass
