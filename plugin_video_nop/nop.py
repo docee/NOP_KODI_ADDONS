@@ -33,7 +33,7 @@ def list_category(categorys):
 
         lists.append((url,list_item,True))
 
-    xbmcplugin.addDirectoryItem(_handle, lists, len(lists))
+    xbmcplugin.addDirectoryItems(_handle, lists, len(lists))
     xbmcplugin.addSortMethod(_handle, xbmcplugin.SORT_METHOD_LABEL_IGNORE_THE)
     xbmcplugin.endOfDirectory(_handle)
 
