@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.nop"
-version="0.0.1"
+version="1.0.0"
 name="NOP Video"
 provider-name="Docee">
 <requires>

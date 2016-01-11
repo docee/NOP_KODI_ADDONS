@@ -7,13 +7,11 @@
 
 import sys
 from nopcore import NOPCore
-import xbmcplugin
-import xbmcgui
-import xbmc
+import xbmcplugin,xbmcgui
 from urlparse import parse_qsl
 
-_url = sys.argv[0]
-_handle = int(sys.argv[1])
+__url__ = sys.argv[0]
+__handle__ = int(sys.argv[1])
 
 CATEGORYS = ["最近得分","收藏最多","最近加精","本月最热","上月最热"]
 
@@ -30,13 +28,13 @@ def list_category(categorys):
 
         list_item = xbmcgui.ListItem(label=categorys[i])
 
-        url = '{0}?action=list&category={1}&page=1'.format(_url,i)
+        url = '{0}?action=list&category={1}&page=1'.format(__url__,i)
 
         lists.append((url,list_item,True))
 
-    xbmcplugin.addDirectoryItems(_handle, lists, len(lists))
+    xbmcplugin.addDirectoryItems(__handle__, lists, len(lists))
     # xbmcplugin.addSortMethod(_handle, xbmcplugin.SORT_METHOD_LABEL_IGNORE_THE)
-    xbmcplugin.endOfDirectory(_handle)
+    xbmcplugin.endOfDirectory(__handle__)
 
 # 列出视频列表
 def list_category_videos(categoryIndex,page):
@@ -59,13 +57,13 @@ def list_category_videos(categoryIndex,page):
             list_item.setInfo('video',{'title':title,'duration':duration})
             list_item.setProperty('IsPlayable','true')
 
-            url = '{0}?action=viewkey&viewkey={1}'.format(_url,videos[i]['viewkey'])
+            url = '{0}?action=viewkey&viewkey={1}'.format(__url__,videos[i]['viewkey'])
 
             lists.append((url,list_item,False))
 
-        xbmcplugin.addDirectoryItems(_handle, lists, len(lists))
+        xbmcplugin.addDirectoryItems(__handle__, lists, len(lists))
         # xbmcplugin.addSortMethod(_handle, xbmcplugin.SORT_METHOD_LABEL_IGNORE_THE)
-        xbmcplugin.endOfDirectory(_handle)
+        xbmcplugin.endOfDirectory(__handle__)
 
     except:
 
@@ -83,7 +81,7 @@ def get_video(viewkey):
 
         play_item = xbmcgui.ListItem(path=url)
 
-        xbmcplugin.setResolvedUrl(_handle,True,listitem=play_item)
+        xbmcplugin.setResolvedUrl(__handle__,True,listitem=play_item)
         # xbmc.Player.play(item=play_item)
 
 
