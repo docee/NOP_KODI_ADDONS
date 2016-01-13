@@ -61,6 +61,14 @@ def list_category_videos(categoryIndex,page):
 
             lists.append((url,list_item,False))
 
+        next_page_item = xbmcgui.ListItem(label='[COLOR FF00FF00]下一页[/COLOR]')
+        next_page_item.setInfo('video',{'title':'下一页'})
+        next_page_item.setProperty('IsPlayable','false')
+        next_page_item_url = '{0}?action=list&category={1}&page={2}'.format(__url__,categoryIndex,page+1)
+
+        lists.append((next_page_item_url,next_page_item,True))
+
+
         xbmcplugin.addDirectoryItems(__handle__, lists, len(lists))
         # xbmcplugin.addSortMethod(_handle, xbmcplugin.SORT_METHOD_LABEL_IGNORE_THE)
         xbmcplugin.endOfDirectory(__handle__)

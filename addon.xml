@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.nop"
-version="1.0.0"
-name="NOP Video"
+version="1.0.1"
+name="91Porn"
 provider-name="Docee">
 <requires>
   <import addon="xbmc.python" version="2.14.0"/>
@@ -16,6 +16,6 @@ provider-name="Docee">
 		<description>No limited,No Ads,Free 91Porn Video!</description>
 		<description lang="zh">无限制，无广告，免费观看91Pron视频！</description>
 		<disclaimer>For Study Only</disclaimer>
-		<disclaimer lang="zh">仅用于学习</disclaimer>
+		<disclaimer lang="zh">仅用于学习,请勿非法传播</disclaimer>
 </extension>
 </addon>
